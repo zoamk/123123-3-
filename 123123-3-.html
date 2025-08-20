@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+        let a=10; //number형 값을 할당
+        let b=3;
+
+        console.log("덧셈 a+b :",a+b);
+        console.log("뺄셈 a-b :",a-b);
+        console.log("곱셈 a*b :",a*b);
+        console.log("나눗셈 a/b :",a/b);
+        console.log("나눗셈 a%b :",a%b);
+
+        console.log("a++ :",a++);
+        // 증가연산자 a++ 의미 a=a+1; a를 1증가시키고, 그 값을 a에 재할당
+        console.log("a-- :",a--);
+        // 감소연산자 a-- 의미 a=a-1; a를 1감소시키고, 그 값을 a에 재할당
+        
+        let numtest01 = Number('123'); //123 문자 매개변수
+        console.log("Number('123')호출 :",numtest01); //
+        let numtest02 = Number(123); //123
+        console.log("Number(123)호출 :",numtest02); // 숫자->숫자
+
+        let numtest03 = Number('123ABC'); //123ABC 문자 매개변수
+        console.log("Number('123ABC')호출 :",numtest03); // Not a Number
+
+        let numtest04 = parseInt('123');
+        console.log("parseInt('123')호출 :",numtest04); // 문자열123을 출력
+
+        let numtest05 = parseInt('123.45'); // 뒤에 소숫점자릿대 무시하고 정수만 출력
+        console.log("parseInt('123.45')호출 :",numtest05);
+
+        let numtest06 = parseInt('123ABC');
+        console.log("parseInt('123ABC')호출 :",numtest06); // 뒤에 문자열 무시하고 정수만 출력
+        
+        let numtest07 = parseFloat('123');
+        console.log("parseFloat('123')호출 :",numtest07); //문자열 123을 출력
+
+        let numtest08 = parseFloat('123.45');
+        console.log("parseFloat('123.45')호출 :",numtest08); // 뒤에있는 소숫점자릿대까지 출력
+
+        let numtest09 = parseFloat('123ABC');
+        console.log("parseFloat('123ABC')호출 :",numtest09); // 소숫점자릿대는 출력하지만 문자열은 무시하고 출력
+
+        let numtest10 = String(123);
+        console.log("string(123)호출 :",numtest10); //숫자를 문자열로 표현
+        
+        let numtest11 = String(true);
+        console.log("string(true)호출 :",numtest11); //문자를 문자열로 표현
+        
+        let numtest12 = Boolean(1);
+        console.log("Boolean(1)호출 :",numtest12); // 논리형으로 변환하여 1이 true
+
+        let numtest13 = Boolean(0);
+        console.log("Boolean(0)호출 :",numtest13); // 논리형으로 변환하여 0이 false
+
+        let numtest14 = Boolean('ABC');
+        console.log("Boolean('ABC')호출 :",numtest14); //ABC는 비어있지 않은 문자열이므로 true 출력
+
+        let numtest15 = Boolean('');
+        console.log("Boolean('')호출 :",numtest15); // ''는 비어있는 문자열이므로 false 출력
+
+        
+    </script>
+    
+</body>
+</html>
