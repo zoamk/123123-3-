@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자(2)</title>
+</head>
+
+<body>
+    <script>
+        // 산술연산자 ====================================================================
+        let a = 10; //number형 값을 할당
+        let b = 3;
+
+        console.log("덧셈 a+b :", a + b);
+        console.log("뺄셈 a-b :", a - b);
+        console.log("곱셈 a*b :", a * b);
+        console.log("나눗셈 a/b :", a / b);
+        console.log("나눗셈 a%b :", a % b);
+
+        // *** 현재의 값을 먼저 사용하고 그 후에 증가/감소 됨 ***
+        console.log("a++ :", a++);
+        //증가연산자 후위증가 ((a) 사용 -> 구문실행 -> 증가)
+        // a = 10; 가 console.log에 출력
+        // a = 11; 가 + 1을 증가
+        // 증가연산자 a++ 의미 a=a+1; a를 1증가시키고, 그 값을 a에 재할당
+        console.log("a-- :", a--);
+        //감소연산자 후위감소 ((a) 사용 -> 구문실행 -> 감소)
+        // a = 11; a 가 console.log에 출력
+        // a = 10; 가 -1 감소
+        // 감소연산자 a-- 의미 a=a-1; a를 1감소시키고, 그 값을 a에 재할당
+
+        // *** 값을 먼저 증가/감소 시키고 증가/감소된 값이 연산에 사용됨 ***
+        console.log("++a :", ++a);
+        //증가연산자 전위증가 (증가 -> (a) 사용 -> 구문실행)
+        console.log("--a :", --a);
+        //감소연산자 전위감소 (감소 -> (a) 사용 -> 구문실행)
+
+        /* 521~522p 연습 */
+        let numtest01 = Number('123'); //123 문자 매개변수
+        console.log("Number('123')호출 :", numtest01); //
+        let numtest02 = Number(123); //123
+        console.log("Number(123)호출 :", numtest02); // 숫자->숫자
+
+        let numtest03 = Number('123ABC'); //123ABC 문자 매개변수
+        console.log("Number('123ABC')호출 :", numtest03); // Not a Number
+
+        let numtest04 = parseInt('123');
+        console.log("parseInt('123')호출 :", numtest04); // 문자열123을 출력
+
+        let numtest05 = parseInt('123.45'); // 뒤에 소숫점자릿대 무시하고 정수만 출력
+        console.log("parseInt('123.45')호출 :", numtest05);
+
+        let numtest06 = parseInt('123ABC');
+        console.log("parseInt('123ABC')호출 :", numtest06); // 뒤에 문자열 무시하고 정수만 출력
+
+        let numtest07 = parseFloat('123');
+        console.log("parseFloat('123')호출 :", numtest07); //문자열 123을 출력
+
+        let numtest08 = parseFloat('123.45');
+        console.log("parseFloat('123.45')호출 :", numtest08); // 뒤에있는 소숫점자릿대까지 출력
+
+        let numtest09 = parseFloat('123ABC');
+        console.log("parseFloat('123ABC')호출 :", numtest09); // 소숫점자릿대는 출력하지만 문자열은 무시하고 출력
+
+        let numtest10 = String(123);
+        console.log("string(123)호출 :", numtest10); //숫자를 문자열로 표현
+
+        let numtest11 = String(true);
+        console.log("string(true)호출 :", numtest11); //문자를 문자열로 표현
+
+        let numtest12 = Boolean(1);
+        console.log("Boolean(1)호출 :", numtest12); // 논리형으로 변환하여 1이 true
+
+        let numtest13 = Boolean(0);
+        console.log("Boolean(0)호출 :", numtest13); // 논리형으로 변환하여 0이 false
+
+        let numtest14 = Boolean('ABC');
+        console.log("Boolean('ABC')호출 :", numtest14); //ABC는 비어있지 않은 문자열이므로 true 출력
+
+        let numtest15 = Boolean('');
+        console.log("Boolean('')호출 :", numtest15); // ''는 비어있는 문자열이므로 false 출력
+        /* //521~522p 연습 */
+
+        // [퀴즈1]
+        console.log("========================[퀴즈1]====================")
+        let abc = 0;
+        while (++abc < 5) {
+            // 1. ++ : abc = abc + 1
+            // 2. abc == 1 ->abc == 2 ->abc == 3 ->abc == 4
+            // 3. <
+            // 4. 5
+            console.log("++abc :", abc); // 2. abc == 1 ,abc == 2 ,abc == 3 ,abc == 4
+        }
+
+        // [퀴즈2]
+        console.log("=======================[퀴즈2]======================")
+        let def = 0;
+
+        while (def++ < 5) {
+            // 1. def == 0
+            // 2. <
+            // 3. 5
+            // 4. ++ : def = def + 1
+            console.log("++def :", def) // 2. abc == 1 ,abc == 2 ,abc == 3 ,abc == 4 ,abc == 5 
+        }
+
+        // 할당연산자 =====================================================================
+        let x = 5; //변수 x 에 5를 대입/할당
+
+        x += 3;
+        // x= x + 3;
+        console.log(x);
+
+        let y = 5; //변수 y 에 5를 대입/할당
+
+        y = y - 2;
+        // y-= 2;
+        console.log("y 계산값 :", y)
+
+        // z * = 5 -> z = z * 5
+        // q / = 5 -> q = q / 5
+        // t % = 5 -> t = t % 5
+
+        // 비교 연산자 =================================================================
+        let num = 5; // num 변수에 숫자 5 할당
+        let str = "5"; // str 변수에 문자 5 할당
+
+        // console.log("num = str :",num = str); //문자 5 를 num 변수에 재할당
+        // console.log(typeof num);
+        console.log("num == str :", num == str); // true (값만 비교)
+        console.log("num === str :", num === str); // false (값, 타입 비교)
+        console.log("num != str :", num != str); // flase (값만 비교)
+        // num 숫자 5, str 문자 5 => true 
+        console.log("num !== str :", num !== str); // true (값만 비교)
+        // num 숫자 5, str 문자 5 => false
+
+        console.log("num > 3 :", num > 3); //true
+        console.log("num < 3 :", num < 3); //false
+        console.log("num >= 3 :", num <= 3); //true
+        console.log("num <= 3 :", num <= 3); //false
+
+        // 논리연산자 =================================================================
+        let a1 = true;
+        let a2 = false;
+
+        console.log("a1 && a2 :", a1 && a2); // [and] 둘다 true 일때 true
+        console.log("a1 || a2 :", a1 || a2); // [or] 둘중에 하나라도 true 일때 true
+        console.log("!a1 :", !a1); // [not] 반대 결과값
+
+        // 조건(삼항)연산자 =================================================================
+        let xVal = 10;
+        let yVal = 20;
+
+        let max = (xVal > yVal) ? xVal :yVal;
+        //         조건(비교) ? true 면 실행 : false 면 실행
+
+        //[퀴즈3]
+        let age=18;
+        
+        let age2 = (age >= 19) ? "성년" : "미성년";
+        console.log("판정된 값은 :",age2)
+    </script>
+
+</body>
+
+</html>
